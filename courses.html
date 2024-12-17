@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+</head>
+<style>
+    body{
+        
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('./background.jpg');
+            background-size: cover; /* Ensures the image covers the entire screen */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-attachment: fixed; /* Makes the background fixed when scrolling */
+    }
+     .upper{
+        border:2px solid black;
+        height: 60px;
+        background-color: black;
+        color: white;
+        border-radius: 10px;
+        margin-top: 10px;
+        font-size: xx-large;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+    .flexo{
+        display: flex;
+        border: 2px solid black;
+        justify-content: space-between;
+        height: 210px;
+        
+    }
+    .boxo{
+        height: 200px;
+        width: 300px;       
+        background-color: black;
+        border: 1px solid black;
+        font-size: x-large;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+    }
+    .boxol{
+        height: 200px;
+        width: 300px;       
+        background-color: black;
+        border: 1px solid black;
+        font-size: x-large;
+        margin-left: auto;
+     }
+    .boxoright{
+        height: 200px;
+        width: 300px;       
+        background-color: black;
+        border: 1px solid black;
+        font-size: x-large;
+        margin-left: auto;
+        
+    }
+    
+    .image{
+        padding-left: 30px;
+        padding-right: 30px;
+        
+    }
+    .flexor{
+        display: flex;
+        border: 2px solid black;
+        justify-content: space-between;
+        height: 210px;
+     }
+    .boxor{
+        height: 200px;
+        width: 300px;       
+        border: 2px solid blue;
+        background-color: black;
+        border: 1px solid black;
+        font-size: x-large;
+    }
+    .tut{
+        text-align: center;
+        font-style: italic;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        color: white;
+    }
+</style>
+<body>
+    <div class="upper" style="padding: 20px;"> 
+         Courses
+    </div>
+    <br>
+    <br>
+    <hr>
+    <div class="flexo">
+
+        <div class="boxo "> 
+               <img src="webd.png" alt="WEB DEVELOPMENT" height="160px" width="200px" class="image">
+              
+              <a href="https://appbrewery.com/p/the-complete-web-development-course" class="tut"> WEB DEVELOPMENT </a>
+        </div>
+     
+        <div class="boxoright">
+            <img src="download.png" alt="Android " height="160px" width="200px" class="image">
+            
+            <a href="https://www.coursera.org/professional-certificates/meta-android-developer" class="tut">APP DEVELOPMENT </a>
+        </div>
+     
+        <div class="boxol"> 
+             <img src="aiml.png" alt=" AI/ML" height="160px" width="200px" class="image">
+            
+            <a href="https://cloud.google.com/learn/training/machinelearning-ai" class="tut">AI/ML</a>
+         </div>
+             <br>
+             <br>
+             
+        </div>
+    </div>
+    <br>
+    <div class="flexor">
+        <div class="boxor">
+            <img src="dsa.png" alt="DSA" height="160px" width="200px" class="image">
+            <a href="https://www.geeksforgeeks.org/courses/dsa-self-paced" class="tut">DSA in C++</a>
+        </div>
+        <div class="boxor">
+            <img src="blockchain.png" alt="BLOCKCHAIN" height="160px" width="200px" class="image">
+            <a href="https://www.coursera.org/specializations/blockchain" class="tut"> BLOCKCHAIN </a>
+        </div>
+        <div class="boxor"> 
+            <img src="Data science.png" alt="AR/VR" height="160px" width="200px" class="image">
+            <a href="https://www.coursera.org/specializations/extended-reality-for-everybody" class="tut"> Data Science </a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    .error { color: red; font-size: 14px; }
+
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #fffdfd;
+            color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('./background.jpg');
+            background-size: cover; /* Ensures the image covers the entire screen */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-attachment: fixed; /* Makes the background fixed when scrolling */
+        }
+
+    .container {
+            
+            height:300px;
+            background: aqua;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+            width: 300px;
+            border: 3px solid black;
+
+        }
+        label{
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        button {
+            padding: 10px;
+            background-color: #fdfdfd;
+            color: black;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        button:hover {
+            background-color: #1975d1;
+        }
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <u><h1 style="text-align: center;">Login</h1></u>
+  <form id="myForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <span id="nameError" class="error"></span><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <span id="emailError" class="error"></span><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+    <span id="passwordError" class="error"></span><br><br>
+
+    <label for="number">Phone Number:</label>
+    <input type="number" id="age" name="age">
+    <span id="numberError" class="error"></span><br><br>
+    
+    <button type="button" onclick="validateForm()" >Submit</button>
+  </form>
+</div>
+  <script>
+    function validateForm() {
+      // Clear previous error messages
+      document.getElementById("nameError").textContent = "";
+      document.getElementById("emailError").textContent = "";
+      document.getElementById("passwordError").textContent = "";
+      document.getElementById("numberError").textContent = "";
+
+      let isValid = true;
+
+      // Name validation
+      const name = document.getElementById("name").value.trim();
+      if (name === "") {
+        document.getElementById("nameError").textContent = "Name is required.";
+        isValid = false;
+      }
+
+      // Email validation
+      const email = document.getElementById("email").value.trim();
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;//imp
+      if (email === "") {
+        document.getElementById("emailError").textContent = "Email is required.";
+        isValid = false;
+      } else if (!emailPattern.test(email)) {//email check krne k lie test method use krenge
+        document.getElementById("emailError").textContent = "Invalid email format.";
+        isValid = false;
+      }
+
+      // Password validation
+      const password = document.getElementById("password").value.trim();
+      if (password === "") {
+        document.getElementById("passwordError").textContent = "Password is required.";
+        isValid = false;
+      } else if (password.length < 6) {
+        document.getElementById("passwordError").textContent = "Password must be at least 6 characters long.";
+        isValid = false;
+      }
+
+      // Age validation
+      const phone = document.getElementById("age").value.trim();
+      if (phone === "") {
+        document.getElementById("numberError").textContent = "Age is required.";
+        isValid = false;
+      } else if (isNaN(age) || age > 10) {
+        document.getElementById("numberError").textContent = "Phone number must be of 10 digits.";
+        isValid = false;
+      }
+
+      // If all validations pass
+      if (isValid) {
+        alert("Form submitted successfully!");
+      }
+    }
+  </script>
+</body>
+</html>

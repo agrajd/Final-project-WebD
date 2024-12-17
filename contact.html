@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Contact Us - Skill Bridge </title>
+
+    <style>
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            margin: 0;
+
+            padding: 0;
+
+            background-color: #f4f4f9;
+
+            color: #333;
+
+        }
+
+        header {
+
+            background: black;
+
+            color: white;
+
+            padding: 15px;
+
+            text-align: center;
+
+        }
+
+        .content {
+
+            padding: 20px;
+
+            max-width: 600px;
+
+            margin: auto;
+
+        }
+
+        h1 {
+
+            color: whitesmoke;
+
+        }
+
+        .contact-form {
+
+            background: #fff;
+
+            border: 1px solid #ddd;
+
+            border-radius: 5px;
+
+            padding: 20px;
+
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .contact-form label {
+
+            display: block;
+
+            margin-bottom: 5px;
+
+            font-weight: bold;
+
+        }
+
+        .contact-form input, .contact-form textarea {
+
+            width: 100%;
+
+            padding: 10px;
+
+            margin-bottom: 15px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 5px;
+
+        }
+
+        .contact-form button {
+
+            width: 100%;
+
+            padding: 10px;
+
+            background: black;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+            font-size: 16px;
+
+        }
+
+        .contact-form button:hover {
+
+            background:  #007acc;
+            color: black;
+
+        }
+
+        .info {
+
+            margin-top: 20px;
+
+            padding: 15px;
+
+            background: #e9f5ff;
+
+            border-left: 5px solid #007acc;
+
+        }
+
+        footer {
+
+            background: black;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 10px;
+
+            margin-top: 20px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Contact Us</h1>
+
+    </header>
+
+
+    <div class="content">
+
+        <h2>We'd love to hear from you!</h2>
+
+        <p>If you have any questions, feedback, or need support, please fill out the form below:</p>
+
+        <form class="contact-form" id="contactForm">
+
+            <label for="name">Your Name</label>
+
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+
+            <label for="email">Your Email</label>
+
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+
+            <label for="message">Your Message</label>
+
+            <textarea id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
+
+
+            <button type="button" onclick="submitContactForm()">Send Message</button>
+
+        </form>
+
+
+        <div id="contactInfo" class="info" style="display:none;">
+
+            <h3>Thank You!</h3>
+
+            <p id="infoText"></p>
+
+        </div>
+
+
+        <h2>Other Ways to Contact Us</h2>
+
+        <p>Email: <a href="mailto:support@skillbridge.com">support@skillbridge.com</a></p>
+
+        <p>Phone: +91 9080706050</p>
+
+        <p>Address: KIET Ghaziabad</p>
+
+    </div>
+
+
+    <footer>
+
+        <p>&copy; 2024 Skill Bridge</p>
+
+    </footer>
+
+
+    <script>
+
+        function submitContactForm() {
+
+            const name = document.getElementById('name').value;
+
+            const email = document.getElementById('email').value;
+
+            const message = document.getElementById('message').value;
+
+            const contactInfo = document.getElementById('contactInfo');
+
+            const infoText = document.getElementById('infoText');
+
+
+            if (name && email && message) {
+
+                infoText.innerHTML = `Thank you, <strong>${name}</strong>! We have received your message and will get back to you at <strong>${email}</strong> shortly.`;
+
+                contactInfo.style.display = 'block';
+
+                document.getElementById('contactForm').reset();
+
+            } else {
+
+                alert('Please fill out all fields before sending your message.');
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+
+
